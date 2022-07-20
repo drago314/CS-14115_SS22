@@ -73,25 +73,15 @@ function renderBarChart(data) {
         .attr("width", x.bandwidth())
 		.on("mouseover", function(event, d) {
 
-            //Get this bar's x/y values, then augment for the tooltip
-            let xPosition = margin.left + parseFloat(d3.select(this).attr("x")) ;
-            let yPosition = margin.top +  y(d.Visitors/2);
-
-            //Update the tooltip position and value
-            d3.select("#tooltip")
-                .style("left", xPosition + "px")
-                .style("top", yPosition + "px")
-                .select("#value")
-                .text(d.Visitors);
-
+			// explore event
 
             //Show the tooltip
-            d3.select("#tooltip").classed("hidden", false);
+            //d3.select("")...
 		})
 		.on("mouseout", function(d) {
 
             //Hide the tooltip
-            d3.select("#tooltip").classed("hidden", true);
+            // d3.select("
 		});
 
 
@@ -128,3 +118,35 @@ function shortenString(content, maxLength){
 	return trimmedString;
 }
 
+
+
+
+
+// TODO Tooltip example
+
+
+// tooltip
+// vis.tooltip = d3.select("body").append('div')
+// 	.attr('class', "tooltip")
+// 	.attr('id', 'mapTooltip')
+//
+
+
+// .on('mouseover', function (event, d) {
+// 	d3.select(this)
+// 		.attr("fill", 'rgba(181,0,0,0.48)')
+// 		.attr("stroke", 'darkred')
+//
+// 	console.log(d)
+// 	vis.tooltip
+// 		.style("opacity", 1)
+// 		.style("left", event.pageX + 20 + "px")
+// 		.style("top", event.pageY + "px")
+// 		.html(`
+//                         <div style="border: thin solid grey; border-radius: 5px; background: lightgrey; padding: 20px">
+//                             <h3>${d.properties.name}<h3>
+//                             <h4> Name: ${vis.countryInfo[d.properties.name].name}</h4>
+//                             <h4> Category: ${vis.countryInfo[d.properties.name].category}</h4>
+//                             <h4> Color: ${vis.countryInfo[d.properties.name].color}</h4>
+//                             <h4> Value: ${vis.countryInfo[d.properties.name].value}</h4>
+//                         </div>`);

@@ -592,7 +592,10 @@ console.log(filteredNumericData);
 
 ```
 
-For more information on ***filter()*** you can take a look at [this tutorial](http://adripofjavascript.com/blog/drips/filtering-arrays-with-array-filter.html).
+For more information on ***filter()*** you can take a look at [this tutorial](http
+://adripofjavascript.com/blog/drips/filtering-arrays-with-array-filter.html). If you want just
+ the first x entries in an array, you might also just use the ***.slice()*** method. Here's a
+  useful link: https://www.w3schools.com/jsref/jsref_slice_array.asp
 
 
 The ***sort()*** method sorts the items in an array. No new array object will be created during execution.
