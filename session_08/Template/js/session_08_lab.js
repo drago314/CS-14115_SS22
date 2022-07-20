@@ -4,15 +4,36 @@
 
 dataFiltering();
 
+
 function dataFiltering() {
 	let attractions = attractionData;
 
-	attractions = attractions.splice(0,5)
-	console.log(attractions)
+	attractions.sort((a,b) => {
+		return b.Visitors - a.Visitors;
+	})
 
-	console.log('hello from your js file. Good luck with the lab!')
+	let parkArray = []
+	let selectBox = document.getElementById("attraction-category");
+	let selectedValue = selectBox.options[selectBox.selectedIndex].value;
 
-	renderBarChart(attractions)
+	for (const element of attractions){
+		if (selectedValue == "all") {
+			parkArray.push(element)
+		}
+		else if (selectedValue == "Theme Park" && element["Category"] == "Theme Park") {
+			parkArray.push(element)
+		}
+		else if (selectedValue == "Water Park" && element["Category"] == "Water Park") {
+			parkArray.push(element)
+		}
+		else if (selectedValue == "Museum" && element["Category"] == "Museum") {
+			parkArray.push(element)
+		}
+		if (parkArray.length == 5) {
+			break;
+		}
+	}
+	renderBarChart(parkArray)
 
 	/* **************************************************
 	 *
