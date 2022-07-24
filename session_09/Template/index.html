@@ -15,9 +15,14 @@
 	<div class="container">
 
 		<h1>Wealth &amp; Health of Nations</h1>
+		<button onclick="changeRandomColor();">Change Random Circle's Color</button>
+		<button onclick="collapseData();">Collapse Data</button>
 
 		<!-- Parent container for the scatterplot -->
-		<div id="chart-area"></div>
+		<div id="chart-area">
+		</div>
+		<div id="tooltip" style="width: 100px; height: 100px; background: lightgray; position: absolute; border-radius: 5px; opacity: 0">
+		</div>
 
 	</div>
 
